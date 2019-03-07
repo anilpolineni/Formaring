@@ -1,0 +1,13 @@
+<h2>{{attrs.heading}}</h2>
+<form method="POST" action="{% url 'farm:sell' %}" >
+	{% csrf_token %}
+	<table>
+
+		{{ datas1 }}
+	</table>
+		
+<input type="submit" name="Send" >
+
+
+
+</form>

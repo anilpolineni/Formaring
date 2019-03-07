@@ -1,0 +1,15 @@
+
+<h3>{{attrs.btnValue}}</h3>
+
+<form method="POST" action="{% url 'farm:suppliersignup' %}" >
+	{% csrf_token %}
+	<table>
+
+		{{ datas }}
+	</table>
+		
+<input type="submit" name="" value="{{attrs.btnValue}}">
+
+
+
+</form>

@@ -1,0 +1,134 @@
+
+{% load staticfiles %}
+<html>
+
+<head>
+	<meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="{% static 'images/12.jpg' %}">
+<!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <link rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" >
+  <script src="{% static 'scripts/jquery-3.3.1.min.js' %}" ></script>
+  <script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
+
+   <title>Farming Assistant Web Service</title>
+ 
+
+</head>
+ <body>
+
+	 
+
+  <center>
+ <div id="w">
+ <h1>Farming Assistant Web Service</h1></div>
+ </center>
+	
+<center>	
+<nav class="navbar"  style="background-color: rgb(182, 182, 180 );">
+  <div class="container-fluid">
+    
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="{% url 'farm:main1' %}" style="color: black;">Home</a></li>
+      <li class="active"><a href="{% url 'farm:complaint' %}" style="color: black;">Complaint Page</a></li>
+      <li class="active"><a href="{% url 'farm:viewcom' %}" style="color: black;">View Complaint Status</a></li>
+      <li class="active"><a href="{% url 'farm:farmingtips' %}" style="color: black;">Farming Tips</a></li>
+      <li class="active"><a href="{% url 'farm:cropad' %}" style="color: black;">Crop Advertisement Details</a></li>
+      <li class="active"><a href="{% url 'farm:sell' %}" style="color: black;">Sell Crop</a></li>
+    </ul>
+        
+    
+   
+  </div>
+</nav>
+</center>
+
+
+  
+{% block content %}
+<center>
+  <form method="POST">
+
+<table cellpadding="2" width="30%"  align="center" cellspacing="2">
+  {% csrf_token %}
+  <table>
+
+    {{ data }}
+  </table>
+    
+<input type="submit" name="" value="{{attrs.btnValue}}">
+  </table>
+
+
+  </form>
+
+</center>
+
+
+  
+
+<style>
+html,body{
+  margin:0;
+  padding:0;
+}
+
+
+
+.active {
+	color:black;
+    font-size:14;
+}
+#k{
+  border:5px solid green;
+  font-size:14;
+}
+#v{
+  background-color: #B6B6B4;
+  color:black;
+    font-size:16;
+
+}
+#s{
+  background-color: #E5E4E2;
+  color:black;
+    font-size:14;
+}
+#y{
+	height:250px;
+	width:1000px;
+	align:center;
+	
+}
+#w{
+	background-color:#1569C7;
+	color:white;
+	padding:1px;
+	font-size:25;
+	
+}#k{
+  font-size:14;
+}
+
+	
+#t{
+	font-size:20;
+	
+}
+#x{
+	color:black;
+	font-size:18;
+}
+</style>
+
+
+
+
+
+{% endblock %}
+
+</body>
+</html>
+

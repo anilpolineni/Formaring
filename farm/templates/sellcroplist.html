@@ -1,0 +1,86 @@
+{% load staticfiles %}
+<html>
+
+<head>
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="{% static 'images/12.jpg' %}">
+<!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <link rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" >
+  <script src="{% static 'scripts/jquery-3.3.1.min.js' %}" ></script>
+  <script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
+
+   <title>SellCrop</title>
+ 
+
+</head>
+ <body>
+
+   
+
+  <center>
+ <div id="w">
+ <h1>SellCropList</h1></div>
+ </center>
+  
+<center>  
+<nav class="navbar"  style="background-color: rgb(182, 182, 180 );">
+  <div class="container-fluid">
+    
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="{% url 'farm:main' %}" style="color: black;">Home</a></li>
+      <li class="active"><a href="{% url 'farm:upload' %}" style="color: black;">Post Advertisement</a></li>
+      <li class="active"><a href="{% url 'farm:SellCropList' %}" style="color: black;">Crop Received</a></li>
+    </ul>
+        <ul class="nav navbar-nav navbar-right">
+      
+      <li><a href="{% url 'farm:signout' %}" style="color: black" >Signout</a></li>
+    </ul>
+    
+   
+  </div>
+</nav>
+</center>
+
+
+
+
+
+ 
+<h2> SELLCROP DETAILS LIST</h2>
+<table class="table table-hover table-responsive table-bordered" style="border: 2px">
+	<thead>
+      <tr>
+        
+        <th class="success bold">SuplierName</th>
+        <th class="success bold">CropName</th>
+        <th class="success">Quantity</th>
+        <th class="success">Rupees</th>
+      </tr>
+    </thead>
+{% for products in datas %}
+<tr>
+	<td>{{products.SuplierName}}</td>
+	<td>{{products.CropName}}</td>
+  <td>{{products.Quantity}}</td>
+  <td>{{products.Rupees}}</td>
+	
+	
+</tr>
+
+
+{% endfor %}	
+
+</table>
+</body>
+<style>
+  
+  #w{
+  background-color:#1569C7;
+  color:white;
+  padding:1px;
+  font-size:25;
+  }
+</style>

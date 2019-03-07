@@ -1,0 +1,171 @@
+
+{% load staticfiles %}
+<html>
+
+<head>
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="{% static 'images/12.jpg' %}">
+<!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <link rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" >
+  <script src="{% static 'scripts/jquery-3.3.1.min.js' %}" ></script>
+  <script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
+
+   <title>Farming Assistant Web Service</title>
+ 
+
+</head>
+ <body>
+
+   
+
+  <center>
+ <div id="w">
+ <h1>Farming Assistant Web Service</h1></div>
+ </center>
+  
+<center>  
+<nav class="navbar"  style="background-color: rgb(182, 182, 180 );">
+  <div class="container-fluid">
+    
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="{% url 'farm:main1' %}" style="color: black;">Home</a></li>
+      <li class="active"><a href="{% url 'farm:complaint' %}" style="color: black" data-toggle="modal" data-target="#myModal6">Complaint Page</a></li>
+      <li class="active"><a href="{% url 'farm:ComplaintsList' %}" style="color: black;">View Complaint Status</a></li>
+      <li class="active"><a href="{% url 'farm:FarmingTipsList' %}" style="color: black;">Farming Tips</a></li>
+      <li class="active"><a href="{% url 'farm:cropad' %}" style="color: black;">Crop Advertisement Details</a></li>
+      <li class="active"><a href="{% url 'farm:sell' %}" style="color: black;">Sell Crop</a></li>
+    </ul>
+        <ul class="nav navbar-nav navbar-right">
+          
+      <li><a href="{% url 'farm:signout' %}" style="color: black" ><span class="glyphicon glyphicon-user"></span>Signout</a></li>
+    </ul>
+    
+   
+  </div>
+</nav>
+</center>
+
+
+  
+{% block content %}
+
+<marquee>
+
+  <h1 id="x"><b>Welcome To Farming Assistant Web Service!!!</h1></b>
+  </marquee>
+
+<body>
+<h2> FarmingTips DETAILS LIST</h2>
+<table class="table table-hover table-responsive table-bordered" style="border: 2px">
+  <thead>
+      <tr>
+        
+        <th class="success bold">Form_title</th>
+        <th class="success bold">Form_usage</th>
+        <th class="success bold">Form_logo</th>
+      </tr>
+    </thead>
+{% for products in datas1 %}
+<tr>
+  <td>{{products.Form_title}}</td>
+  <td>{{products.Form_usage}}</td>
+  <td><img src="{{products.Form_logo.url}}" height="100px" width="100px"></td>
+  
+  
+</tr>
+
+
+{% endfor %}  
+
+</table>
+</body>
+  
+
+ <style>
+html,body{
+  margin:0;
+  padding:0;
+}
+
+
+
+.active {
+  color:black;
+    font-size:14;
+}
+#k{
+  border:5px solid green;
+  font-size:14;
+}
+#v{
+  background-color: #B6B6B4;
+  color:black;
+    font-size:16;
+
+}
+#s{
+  background-color: #E5E4E2;
+  color:black;
+    font-size:14;
+}
+#y{
+  height:250px;
+  width:1000px;
+  align:center;
+  
+}
+#w{
+  background-color:#1569C7;
+  color:white;
+  padding:1px;
+  font-size:25;
+  
+}#k{
+  font-size:14;
+}
+
+  
+#t{
+  font-size:20;
+  
+}
+#x{
+  color:black;
+  font-size:18;
+}
+</style>
+
+<div class="modal fade" id="myModal6" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+
+
+
+
+{% endblock %}
+
+</body>
+</html>
+
+
