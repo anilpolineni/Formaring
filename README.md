@@ -1,4 +1,4 @@
-# Farmring
+# Farmring 
 
 ## By Polineni Anil 
 
@@ -6,9 +6,9 @@ In this project farmers can sent their problems to the suppliers then supplier c
 
 
 ## Required skills:
-	Python
+	Python3
 	Django framework
 	HTML5
-	CSS
+	CSS (cscading stylesheets)
 ## Required Softwares:
 	Python
